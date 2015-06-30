@@ -34,7 +34,7 @@ if (cluster.isMaster) {
 
     cluster.on('online', function(worker) {
         workers +=1;
-        if (workers === 4) {
+        if (workers === cpus) {
             setTimeout(function() {
                 var totalReq = 100;
                 var selfReq = require('./req');
